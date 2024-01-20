@@ -19,6 +19,7 @@ db.sequelize
 require("./app/routes/project.routes")(app);
 require("./app/routes/task.routes")(app);
 require("./app/routes/comment.routes")(app);
+require("./app/routes/label.routes")(app);
 app.get("/", (req, res) => {
   res.json({ message: "running" });
 });
