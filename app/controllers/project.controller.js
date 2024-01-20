@@ -2,18 +2,6 @@ const db = require("../models");
 const Project = db.project;
 const Op = db.Sequelize.Op;
 
-exports.create = (req, res) => {};
-
-exports.findAll = (req, res) => {};
-
-exports.findOne = (req, res) => {};
-
-// exports.create = (req, res)=>{
-//     if(!req.body.id){
-
-//     }
-// }
-
 exports.findAll = (req, res) => {
   const id = req.query.id;
   var condition = id ? { id: { [Op.iLike]: `%${id}%` } } : null;

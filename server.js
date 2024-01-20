@@ -1,7 +1,9 @@
 const express = require("express");
-
+const bodyParser = require("body-parser");
+const cors = require("cors");
 const app = express();
 
+app.use(cors({ origin: "http://localhost:5173" }));
 app.use(express.json());
 
 const db = require("./app/models");
@@ -15,6 +17,7 @@ db.sequelize
   });
 
 require("./app/routes/project.routes")(app);
+require("./app/routes/task.routes")(app);
 app.get("/", (req, res) => {
   res.json({ message: "running" });
 });
